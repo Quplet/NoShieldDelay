@@ -10,9 +10,18 @@ It checks this by looking at the difference between the current use time countdo
 
 > `return item.getMaxUseTime(this.activeItemStack) - this.itemUseTimeLeft >= 5;`
 
-This mod bypasses this by using mixin to alter the result of this block of code, allowing comparison between any given integer 0 thorough 5.
+This mod bypasses this by using mixin to alter the `5` constant, allowing comparison between any given integer 0 thorough 5.
 
+This mod is supposed to be an alternative to Revvilo's Responsive Shields. Because of this, if Revvilo ever makes a Fabric port of their own, I will cease maintaining this project.
 
+----------
+## Setup
+
+This mod should work with 1.17+. It possibly could work with versions older than that, but I don't feel like testing it.
+
+This mod is only necessary server side. Installing on the client as well will not yield any benefit.
+
+The Fabric API is not needed for this mod. Only the Fabric Loader.
 
 ----------
 ## Configs
@@ -27,10 +36,6 @@ This mod bypasses this by using mixin to alter the result of this block of code,
 
 
 ### Info:
-- Setting Raise Time to 0 makes shields capable of blocking immediately.
+- Setting Raise Time to 0 makes shields capable of blocking immediately
 
-
-- Setting Raise Time to 5 is no different from not having the mod installed and is less efficient than setting the Enable setting to false. Both have the effect of disabling the mod's effects.
-
-
-- The client-side raise animation takes roughly one tick to complete. So setting Raise Time to 1 is a decent balance between responsiveness and not being able to blockhit as easily - which I think was the original intention of the delay.
+- The client-side raise animation takes roughly one tick to complete. So setting Raise Time to 1 is a decent balance between responsiveness and not being able to blockhit as easily.
