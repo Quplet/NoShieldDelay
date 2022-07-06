@@ -9,8 +9,9 @@
     "Qu"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/Quplet/NoShieldDelay",
+    "sources": "https://github.com/Quplet/NoShieldDelay",
+    "issues": "https://github.com/Quplet/NoShieldDelay/issues"
   },
 
   "license": "MIT",
