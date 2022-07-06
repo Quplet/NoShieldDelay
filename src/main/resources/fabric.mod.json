@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "no-shield-delay",
+  "version": "${version}",
+
+  "name": "No Shield Delay",
+  "description": "A recreation of Revvilo's Responsive Shields in Fabric. https://modrinth.com/mod/responsiveshields",
+  "authors": [
+    "Qu"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "MIT",
+  "icon": "assets/no-shield-delay/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "qu.noshielddelay.NoShieldDelay"
+    ]
+  },
+  "mixins": [
+    "no-shield-delay.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.6",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
