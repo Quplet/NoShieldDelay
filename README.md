@@ -14,6 +14,7 @@ This mod bypasses this by using mixin to alter the `5` constant, allowing compar
 
 This mod is supposed to be an alternative to [Revvilo's Responsive Shields](https://github.com/Revvilo/Responsive-Shields). Because of this, if Revvilo ever makes a Fabric port of their own, I will cease maintaining this project. 
 Give it a look if you need a Forge equivalent.
+
 ----------
 ## Setup
 
