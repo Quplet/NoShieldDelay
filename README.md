@@ -12,8 +12,8 @@ It checks this by looking at the difference between the current use time countdo
 
 This mod bypasses this by using mixin to alter the `5` constant, allowing comparison between any given integer 0 thorough 5.
 
-This mod is supposed to be an alternative to Revvilo's Responsive Shields. Because of this, if Revvilo ever makes a Fabric port of their own, I will cease maintaining this project.
-
+This mod is supposed to be an alternative to [Revvilo's Responsive Shields](https://github.com/Revvilo/Responsive-Shields). Because of this, if Revvilo ever makes a Fabric port of their own, I will cease maintaining this project. 
+Give it a look if you need a Forge equivalent.
 ----------
 ## Setup
 
