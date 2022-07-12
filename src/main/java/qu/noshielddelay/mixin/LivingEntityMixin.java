@@ -12,7 +12,6 @@ public class LivingEntityMixin {
     //Injects into the isBlocking method and changes the 5 constant to whatever ModConfig.DELAY is.
     @ModifyConstant(method = "isBlocking", constant = @Constant(intValue = 5))
     private int setShieldUseDelay(int constant) {
-        if (ModConfig.ENABLED) return ModConfig.DELAY;
-        return constant;
+        return ModConfig.ENABLED ? ModConfig.DELAY : constant;
     }
 }
