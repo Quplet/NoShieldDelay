@@ -1,6 +1,8 @@
 ## No Shield Delay
 ### Configurable reduction of the delay in Minecraft's blocking system for Fabric based off of Revvilo's Responsive Shields
 
+Ever notice a strange occurrence where you try to block and attack and it hits you anyway? Even though your shield was definitely up bny then? Well, it isn't in your head! That delay is very much real and this mod removes it!
+
 When holding use on an item, there is a base 'use time' which is stored and then decremented every tick while it's being held.
 
 Minecraft will only block an attack after the shield has been raised for more than 5 ticks.
@@ -16,7 +18,7 @@ This mod is supposed to be an alternative to [Revvilo's Responsive Shields](http
 Give it a look if you need a Forge equivalent.
 
 ----------
-## Setup
+## 🧰 Setup
 
 This mod should work with 1.17+. It possibly could work with versions older than that, but I don't feel like testing it.
 
@@ -25,7 +27,7 @@ This mod is only necessary server side. Installing on the client as well will no
 The Fabric API is not needed for this mod. Only the Fabric Loader.
 
 ----------
-## Configs
+## ⚙ Configs
 ### Files and contents:
 #### no-shield-delay.toml
 
