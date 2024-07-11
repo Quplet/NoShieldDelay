@@ -13,14 +13,16 @@ public class ModConfig {
     public static final int DELAY;
 
     static {
-        NoShieldDelay.LOGGER.info("Reading config file for " + NoShieldDelay.MOD_ID);
-        CommentedFileConfig config = CommentedFileConfig.of(FabricLoader.getInstance().getConfigDir().resolve(NoShieldDelay.MOD_ID + ".toml"));
-        config.load();
-        checkConfig(config);
-        ENABLED = config.get("Enabled");
-        DELAY = config.get("RaiseTime");
-        config.close();
-        NoShieldDelay.LOGGER.info("Enabled: " + ENABLED + ", Raise Time: " + DELAY);
+//        NoShieldDelay.LOGGER.info("Reading config file for " + NoShieldDelay.MOD_ID);
+//        CommentedFileConfig config = CommentedFileConfig.of(FabricLoader.getInstance().getConfigDir().resolve(NoShieldDelay.MOD_ID + ".toml"));
+//        config.load();
+//        checkConfig(config);
+//        ENABLED = config.get("Enabled");
+//        DELAY = config.get("RaiseTime");
+//        config.close();
+        ENABLED = true;
+        DELAY = 1;
+        NoShieldDelay.LOGGER.info("Enabled: {}, Raise Time: {}", ENABLED, DELAY);
     }
 
     public static void init() {}

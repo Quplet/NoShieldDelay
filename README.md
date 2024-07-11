@@ -32,7 +32,7 @@ The Fabric API is not needed for this mod. Only the Fabric Loader.
 #### no-shield-delay.toml
 
 >`RaiseTime`
->> (From 0 to 5. default: 0) The amount of time, in ticks, from when you right-click before the game will block attacks.
+>> (From 0 to 5. default: 1) The amount of time, in ticks, from when you right-click before the game will block attacks.
 
 >`Enabled`
 >> (Default: true) Whether or not the effect of the mod is enabled.

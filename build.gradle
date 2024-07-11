@@ -1,10 +1,7 @@
 plugins {
-	id 'fabric-loom' version '0.12-SNAPSHOT'
+	id 'fabric-loom' version '1.7-SNAPSHOT'
 	id 'maven-publish'
 }
-
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
 
 archivesBaseName = project.archives_base_name
 version = project.mod_version
@@ -19,15 +16,27 @@ repositories {
 	maven { url 'https://jitpack.io' }
 }
 
+loom {
+	splitEnvironmentSourceSets()
+
+	mods {
+		"no-shield-delay" {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
+
+}
+
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	modImplementation "com.electronwill.night-config:core:3.6.5"
-	modImplementation "com.electronwill.night-config:toml:3.6.5"
-	include "com.electronwill.night-config:core:3.6.5"
-	include "com.electronwill.night-config:toml:3.6.5"
+	modImplementation "com.electronwill.night-config:core:3.8.0"
+	modImplementation "com.electronwill.night-config:toml:3.8.0"
+	include "com.electronwill.night-config:core:3.8.0"
+	include "com.electronwill.night-config:toml:3.8.0"
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	//modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
@@ -55,6 +64,9 @@ java {
 	// if it is present.
 	// If you remove this line, sources will not be generated.
 	withSourcesJar()
+
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
 }
 
 jar {
@@ -66,7 +78,8 @@ jar {
 // configure the maven publication
 publishing {
 	publications {
-		mavenJava(MavenPublication) {
+		create("mavenJava", MavenPublication) {
+			artifactId = project.archives_base_name
 			from components.java
 		}
 	}
