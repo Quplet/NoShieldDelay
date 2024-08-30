@@ -13,15 +13,13 @@ public class ModConfig {
     public static final int DELAY;
 
     static {
-//        NoShieldDelay.LOGGER.info("Reading config file for " + NoShieldDelay.MOD_ID);
-//        CommentedFileConfig config = CommentedFileConfig.of(FabricLoader.getInstance().getConfigDir().resolve(NoShieldDelay.MOD_ID + ".toml"));
-//        config.load();
-//        checkConfig(config);
-//        ENABLED = config.get("Enabled");
-//        DELAY = config.get("RaiseTime");
-//        config.close();
-        ENABLED = true;
-        DELAY = 1;
+        NoShieldDelay.LOGGER.info("Reading config file for " + NoShieldDelay.MOD_ID);
+        CommentedFileConfig config = CommentedFileConfig.of(FabricLoader.getInstance().getConfigDir().resolve(NoShieldDelay.MOD_ID + ".toml"));
+        config.load();
+        checkConfig(config);
+        ENABLED = config.get("Enabled");
+        DELAY = config.get("RaiseTime");
+        config.close();
         NoShieldDelay.LOGGER.info("Enabled: {}, Raise Time: {}", ENABLED, DELAY);
     }
 
@@ -30,7 +28,7 @@ public class ModConfig {
     private static void checkConfig(CommentedFileConfig config) {
         ConfigSpec spec = new ConfigSpec();
         spec.defineInList("Enabled", true, Arrays.asList(true, false));
-        spec.defineInRange("RaiseTime", 0, 0, 5);
+        spec.defineInRange("RaiseTime", 1, 0, 5);
         if (!spec.isCorrect(config)) {
             NoShieldDelay.LOGGER.error("One or more config settings were incorrect, setting to default value(s)");
             config.setComment("Enabled", "This is a Fabric recreation of Revvilo's Responsive Shield's mod. Their mod is exclusively for Forge and I wanted a Fabric one for myself, so here you go.\n" +
@@ -38,7 +36,7 @@ public class ModConfig {
                     "Setting RaiseTime to 0 makes shields capable of blocking instantly. Setting it to 5 would be equivalent to vanilla.");
             ConfigSpec.CorrectionListener listener = (action, path, incorrectValue, correctedValue) -> {
                 String pathString = String.join(",", path);
-                NoShieldDelay.LOGGER.error("Corrected " + pathString + ": was " + incorrectValue + ", is now " + correctedValue);
+                NoShieldDelay.LOGGER.error("Corrected {}: was {}, is now {}", pathString, incorrectValue, correctedValue);
             };
             spec.correct(config, listener);
             config.save();
