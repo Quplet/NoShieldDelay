@@ -9,8 +9,8 @@ import qu.noshielddelay.config.ModConfig;
 @Mixin(LivingEntity.class)
 public class LivingEntityMixin {
 
-    //Injects into the isBlocking method and changes the 5 constant to whatever ModConfig.DELAY is.
-    @ModifyConstant(method = "isBlocking", constant = @Constant(intValue = 5))
+    //Injects into the getBlockingItem method and changes the 5 constant to whatever ModConfig.DELAY is.
+    @ModifyConstant(method = "getBlockingItem", constant = @Constant(intValue = 5))
     private int setShieldUseDelay(int constant) {
         return ModConfig.ENABLED ? ModConfig.DELAY : constant;
     }
